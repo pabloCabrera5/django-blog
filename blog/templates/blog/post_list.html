@@ -1,23 +1,44 @@
 <html>
-    <head>
-        <title>Pablos Django blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Django  Blog</a></h1>
-        </div>
+
+<head>
+    <title>Pablos Django blog</title>
+</head>
+
+<body>
+    <div>
+        <h1><a href="/">Django Blog</a></h1>
+
+
+
+        {% for post in posts %} {{ post }}{% endfor %}
+
+
 
         <div>
-            <p>published: 11.05.2019, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
+            <h1><a href="/"> Django Blog </a></h1>
+        </div>{% for post in posts %} <div>
+            <p> publicado: {{ post.published_date }} </p>
+            <h1><a href="">{{ post.title }} </a></h1>
+            <p>{{ post.text|linebreaksbr }} </p>
+        </div>{% endfor %}
+    </div>
 
-        <div>
-            <p>published: 11.05.2019, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
-    </body>
+    <div>
+        <p>published: 11.05.2019, 12:14</p>
+        <h2><a href="">My first post</a></h2>
+        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta
+            gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+            fermentum massa justo sit amet risus.</p>
+    </div>
+
+    <div>
+        <p>published: 11.05.2019, 12:14</p>
+        <h2><a href="">My second post</a></h2>
+        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta
+            gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+    </div>
+</body>
+
 </html>
+
 </html>
